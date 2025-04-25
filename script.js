@@ -2,6 +2,22 @@ const size = 4;
 let board = [];
 let score = 0;
 
+function toggleDarkMode() {
+    const body = document.body;
+    const darkModeButton = document.getElementById('dark-mode-button');
+    body.classList.toggle('dark-mode');
+    
+    if (body.classList.contains('dark-mode')) {
+        darkModeButton.textContent = 'Light Mode';
+    } else {
+        darkModeButton.textContent = 'Dark Mode';
+    }
+    
+    const color = body.classList.contains('dark-mode') ? '#333' : '#fff';
+    document.body.style.background = color;
+
+}
+
 function createBoard() {
   const gameContainer = document.getElementById('game');
   gameContainer.innerHTML = '';
